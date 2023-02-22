@@ -53,17 +53,26 @@ const ExpenseForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
 
+        /*When adding multiple values, those values are added as strings instead of numbers.
+         simply make sure you enforce a number by adding + :(+enteredAmount)
+         
+        */
+
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
-            date: new Date(enteredDate)
-        }
+            amount: +enteredAmount,
+            date: new Date(enteredDate),
+        };
 
         props.onSaveExpenseData(expenseData);
         setEnteredTitle("");
         setEnteredAmount("");
         setEnteredDate("");
 
+    }
+
+    const cancelEditingHandler = () => {
+        props.isCanceled(false);
     }
 
     return (
@@ -87,6 +96,7 @@ const ExpenseForm = (props) => {
                 </div>
                 <div className='new-expense__actions'>
                     <button type='submit'>Add Expense</button>
+                    <button type='button' onClick={cancelEditingHandler}>Cancel</button>
                 </div>
             </div>
 
