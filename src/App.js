@@ -35,6 +35,18 @@ const Dummy_Expense = [
     amount: 450.5,
     date: new Date(2023, 5, 12),
   },
+  {
+    id: 'e6',
+    title: 'Eduaction',
+    amount: 480.5,
+    date: new Date(2020, 5, 12),
+  },
+  {
+    id: 'e7',
+    title: 'Laptop',
+    amount: 990.5,
+    date: new Date(2020, 6, 12),
+  },
 ];
 
 
